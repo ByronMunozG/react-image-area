@@ -10,8 +10,8 @@
       "levels": [
         "Area selector"
       ],
-      "locStart": 7,
-      "locEnd": 46,
+      "locStart": 6,
+      "locEnd": 45,
       "filePath": "src/components/AreaSelector/AreaSelector.stories.tsx",
       "meta": {}
     }
