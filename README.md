@@ -5,6 +5,8 @@
 
 > React component to select multiple areas/regions of images.
 
+[Live Example](https://byronmunozg.github.io/react-image-area/)
+
 ## :books: Table of Contents
 
 - [Installation](#package-installation)

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { AreaSelector } from 'src/components/AreaSelector';
-import logo from 'public/logo512.png';
 import { CustomAreaRenderer, IArea } from 'src/types';
 import type { Story } from '@ladle/react';
 
@@ -40,7 +39,7 @@ export const AreaSelectExample: Story<{
             }}
             customAreaRenderer={customRender}
         >
-            <img src={logo} />
+            <img src='logo512.png' />
         </AreaSelector>
     );
 };

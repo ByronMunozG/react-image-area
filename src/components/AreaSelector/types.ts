@@ -18,7 +18,7 @@ export interface IAreaSelectorProps extends Partial<IDefaultAreaSelectorProps> {
     wrapperStyle?: Omit<CSSProperties, 'touchAction' | 'boxSizing'>;
     globalAreaStyle?: CustomStyles;
     customAreaRenderer?: CustomAreaRenderer;
-    mediaWrapperClassName: string;
+    mediaWrapperClassName?: string;
 }
 
 export interface IEventData {
