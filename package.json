@@ -1,6 +1,6 @@
 {
   "name": "@bmunozg/react-image-area",
-  "description": "Multi area/region selection on images",
+  "description": "React component to select multiple areas/regions of images.",
   "author": "Byron Muñoz G. <byron.munoz.godoy@gmail.com> (https://github.com/ByronMunozG)",
   "license": "MIT",
   "private": true,
@@ -33,7 +33,10 @@
     "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
     "lint": "eslint ./src --ext .ts,.tsx",
     "dev": "ladle serve",
-    "build": "vite build"
+    "build:example": "ladle build --out ./build",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@ladle/react": "^0.8.5",
@@ -48,6 +51,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-react-hooks": "^4.3.0",
+    "gh-pages": "^3.2.3",
     "prettier": "^2.6.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
@@ -56,5 +60,13 @@
   "peerDependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ByronMunozG/react-image-area.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ByronMunozG/react-image-area/issues"
+  },
+  "homepage": "https://github.com/ByronMunozG/react-image-area#readme"
 }
