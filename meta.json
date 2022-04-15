@@ -1,0 +1,19 @@
+{
+  "about": {
+    "homepage": "https://www.ladle.dev",
+    "github": "https://github.com/tajo/ladle",
+    "version": 1
+  },
+  "stories": {
+    "area-selector--area-select": {
+      "name": "Area select",
+      "levels": [
+        "Area selector"
+      ],
+      "locStart": 7,
+      "locEnd": 46,
+      "filePath": "src/components/AreaSelector/AreaSelector.stories.tsx",
+      "meta": {}
+    }
+  }
+}
