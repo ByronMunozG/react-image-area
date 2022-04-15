@@ -426,6 +426,7 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
                     onCropStart={(event) => onAreaPointerDown(event, index)}
                     globalAreaStyle={globalAreaStyle}
                     customAreaRenderer={customAreaRenderer}
+                    areaNumber={index + 1}
                 />
             ))}
             {debug ? (

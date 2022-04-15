@@ -15,7 +15,7 @@ export type CustomStyles = Omit<
     | 'boxSizing'
 >;
 
-export type CustomAreaRenderer = (areaProps: AreaRendererProps) => ReactNode;
+export type CustomAreaRenderer = (areaProps: IAreaRendererProps) => ReactNode;
 
 export interface IRectangle {
     x: number;
@@ -31,7 +31,9 @@ export interface IArea extends IRectangle {
     areaStyle?: CustomStyles;
 }
 
-export type AreaRendererProps = Omit<IArea, 'customAreaRenderer'>;
+export interface IAreaRendererProps extends Omit<IArea, 'customAreaRenderer'> {
+    areaNumber: number;
+}
 
 export interface IPixelArea extends IArea {
     unit: 'px';

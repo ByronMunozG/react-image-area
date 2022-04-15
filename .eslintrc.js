@@ -12,6 +12,7 @@ module.exports = {
         'plugin:react/jsx-runtime',
         'prettier'
     ],
+    root: true,
     parserOptions: {
         ecmaFeatures: {
             jsx: true

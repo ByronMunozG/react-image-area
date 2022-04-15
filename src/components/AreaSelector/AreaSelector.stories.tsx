@@ -17,8 +17,8 @@ export const AreaSelectExample: Story<{
     const customRender: CustomAreaRenderer = (areaProps) => {
         if (!areaProps.isChanging) {
             return (
-                <div>
-                    {customRenderExampleText} - x:{areaProps.x}
+                <div key={areaProps.areaNumber}>
+                    {customRenderExampleText} - {areaProps.areaNumber}
                 </div>
             );
         }

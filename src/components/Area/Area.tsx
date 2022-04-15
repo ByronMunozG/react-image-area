@@ -15,7 +15,8 @@ export const Area: FunctionComponent<IAreaProps> = ({
     onCropStart,
     showHandles,
     globalAreaStyle,
-    customAreaRenderer
+    customAreaRenderer,
+    areaNumber
 }) => {
     const localStyle = {
         top: `${area.y}${area.unit}`,
@@ -39,7 +40,9 @@ export const Area: FunctionComponent<IAreaProps> = ({
             onPointerDown={onCropStart}
             data-wrapper="wrapper"
         >
-            {customAreaRenderer ? customAreaRenderer(area) : null}
+            {customAreaRenderer
+                ? customAreaRenderer({ ...area, areaNumber })
+                : null}
             {showHandles ? (
                 <Fragment>
                     <div

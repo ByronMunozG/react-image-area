@@ -8,15 +8,12 @@ const pluginsArray = [dts({ insertTypesEntry: true })];
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
     return {
-        plugins:
-            command === 'build'
-                ? pluginsArray
-                : [
-                      reactPlugin({
-                          exclude: /\.stories\.tsx?$/
-                      }),
-                      ...pluginsArray
-                  ],
+        plugins: [
+            reactPlugin({
+                exclude: /\.stories\.tsx?$/
+            }),
+            ...pluginsArray
+        ],
         publicDir: command === 'build' ? false : 'public',
         resolve: {
             alias: {
@@ -51,9 +48,6 @@ export default defineConfig(({ command }) => {
             target: 'esnext',
             sourcemap: true,
             emptyOutDir: true
-        },
-        esbuild: {
-            jsxInject: `import React from 'react'`
         }
     };
 });
