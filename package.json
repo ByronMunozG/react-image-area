@@ -4,7 +4,7 @@
   "author": "Byron Muñoz G. <byron.munoz.godoy@gmail.com> (https://github.com/ByronMunozG)",
   "license": "MIT",
   "private": false,
-  "version": "0.0.0-development",
+  "version": "1.0.1",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
