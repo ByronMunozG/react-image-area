@@ -1,2 +1,2 @@
-export * from './AreaSelector';
-export * from './types';
+export { AreaSelector } from './AreaSelector';
+export type { IAreaSelectorProps } from './types';

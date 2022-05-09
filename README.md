@@ -1,4 +1,5 @@
 # react-image-area
+
 ![react](https://img.shields.io/badge/react-^17.0.0-blue.svg)
 ![language](https://img.shields.io/badge/language-typescript-blue.svg)
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
@@ -9,13 +10,13 @@
 
 ## :books: Table of Contents
 
-- [Installation](#package-installation)
-- [Usage](#rocket-usage)
-- [Features](#key-features)
-- [Docs](#notebook-docs)
-- [Support](#hammer_and_wrench-support)
-- [Contributing](#memo-contributing)
-- [License](#scroll-license)
+-   [Installation](#package-installation)
+-   [Usage](#rocket-usage)
+-   [Features](#key-features)
+-   [Docs](#notebook-docs)
+-   [Support](#hammer_and_wrench-support)
+-   [Contributing](#memo-contributing)
+-   [License](#scroll-license)
 
 ## :package: Installation
 
@@ -24,6 +25,7 @@ npm i @bmunozg/react-image-area
 ```
 
 ## :rocket: Usage
+
 > Usage with types
 
 ```jsx
@@ -49,20 +51,23 @@ const ExampleComponent = () => {
 ```
 
 ## :key: Features
-- Responsive (you can use pixels or percentages).
-- Touch enabled.
-- Min/max area size.
-- Custom area render
+
+-   Responsive (you can use pixels or percentages).
+-   Touch enabled.
+-   Min/max area size.
+-   Custom area render
 
 ## :notebook: Docs
-- ### Required Props
-    - **`areas: IArea[]`**
+
+-   ### Required Props
+
+    -   **`areas: IArea[]`**
 
         Starting with no areas:
 
         ```jsx
         // ...
-        const [areas,setAreas] = useState<IAreas[]>([])
+        const [areas,setAreas] = useState<IArea[]>([])
         // ...
         return (
             <AreaSelector
@@ -73,13 +78,14 @@ const ExampleComponent = () => {
         )
         // ...
         ```
-    - **`onChange: (areas: IAreas[]) => void`**
+
+    -   **`onChange: (areas: IArea[]) => void`**
 
         A callback which happens for every change on the selection area.
 
         ```jsx
         // ...
-        const [areas,setAreas] = useState<IAreas[]>()
+        const [areas,setAreas] = useState<IArea[]>()
         // ...
         return (
             <AreaSelector
@@ -91,65 +97,67 @@ const ExampleComponent = () => {
         // ...
         ```
 
-- ### Default Props
+-   ### Default Props
 
-    - **`maxAreas: number`**
+    -   **`maxAreas: number`**
 
         **Default: `Infinity`**
-        
+
         Set the maximum areas that can be drawn, by default there are no limit.
 
-    - **`unit: 'pixel' | 'percentage'`**
+    -   **`unit: 'pixel' | 'percentage'`**
 
         **Default: `pixel`**
-        
+
         Set the unit you want to work with.
 
-    - **`minWidth: number`**
+    -   **`minWidth: number`**
 
         **Default: `0`**
-        
+
         Min width of the areas.
 
-
-    - **`minHeight: number`**
+    -   **`minHeight: number`**
 
         **Default: `0`**
-        
+
         Min height of the areas.
 
-
-    - **`debug: boolean`**
+    -   **`debug: boolean`**
 
         **Default: `false`**
 
         Display info of the current areas.
 
-- ### Optional Props
+-   ### Optional Props
 
-    - **`maxWidth: number`**
+    -   **`maxWidth: number`**
 
         Max width of the areas.
 
-    - **`maxHeight: number`**
+    -   **`maxHeight: number`**
 
         Max height of the areas.
 
-    - **`wrapperStyle: CSSProperties`**
+    -   **`wrapperStyle: CSSProperties`**
 
         Apply styles to the wrapper element.
 
-        *Omited Styles*: `touchAction` | `boxSizing`
+        _Omited Styles_: `touchAction` | `boxSizing`
+
         ```js
         wrapperStyle={{
             border: '2px solid black'
         }}
         ```
-    - **`globalAreaStyle: CSSProperties`**
+
+    -   **`globalAreaStyle: CSSProperties`**
 
         Apply global styles to the areas.
-        
-        *Omited Styles*: `position` | `touchAction` | `top` | `left` | `width` | `height` | `boxSizing`
+
+        _Omited Styles_: `position` | `touchAction` | `top` | `left` | `width` |
+        `height` | `boxSizing`
+
         ```js
         globalAreaStyle={{
             border: '1.5px dashed blue',
@@ -157,10 +165,11 @@ const ExampleComponent = () => {
             opacity: '0.5'
         }}
         ```
-    - **`customAreaRenderer: (areaProps: IAreaRendererProps) => ReactNode`**
-        
-        Custom render function to display info inside the areas.
-        *Remember to add a key*
+
+    -   **`customAreaRenderer: (areaProps: IAreaRendererProps) => ReactNode`**
+
+        Custom render function to display info inside the areas. _Remember to
+        add a key_
 
         ```jsx
         import { AreaSelector, IAreaRendererProps } from '@bmunozg/react-image-area'
@@ -185,20 +194,23 @@ const ExampleComponent = () => {
         );
         // ...
         ```
-    - **`mediaWrapperClassName: string`**
-        
+
+    -   **`mediaWrapperClassName: string`**
+
         Classname to apply to the media wrapper (image passed as children).
 
         ```jsx
         // ...
         return (
             <AreaSelector>
-                <img src='my-image.jpg' />
+                <img src="my-image.jpg" />
             </AreaSelector>
         );
         // ...
         ```
-        *inside the component* :arrow_down:
+
+        _inside the component_ :arrow_down:
+
         ```jsx
         // ...
         return (
@@ -214,11 +226,16 @@ const ExampleComponent = () => {
 
 ## :hammer_and_wrench: Support
 
-Please [open an issue](https://github.com/ByronMunozG/react-image-area/issues/new) for support.
+Please
+[open an issue](https://github.com/ByronMunozG/react-image-area/issues/new) for
+support.
 
 ## :memo: Contributing
 
-Please contribute using [Github Flow](https://guides.github.com/introduction/flow/). Create a branch, add commits, and [open a pull request](https://github.com/ByronMunozG/react-image-area/compare/).
+Please contribute using
+[Github Flow](https://guides.github.com/introduction/flow/). Create a branch,
+add commits, and
+[open a pull request](https://github.com/ByronMunozG/react-image-area/compare/).
 
 ## :scroll: License
 

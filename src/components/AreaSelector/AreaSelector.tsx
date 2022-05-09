@@ -15,6 +15,7 @@ import {
     formatArea
 } from 'src/utils';
 import { Area } from '../Area/Area';
+import Debugger from './Debugger';
 import { IAreaSelectorProps, IAreaStatus, IEventData } from './types';
 import { isSubElement } from './utils';
 
@@ -429,23 +430,7 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
                     areaNumber={index + 1}
                 />
             ))}
-            {debug ? (
-                <table style={{ position: 'absolute', right: 0, top: 0 }}>
-                    <tbody>
-                        {areas.map((area, index) => {
-                            return (
-                                <tr key={index}>
-                                    <td>x: {Math.round(area.x)}</td>
-                                    <td>y: {Math.round(area.y)}</td>
-                                    <td>width: {Math.round(area.width)}</td>
-                                    <td>height: {Math.round(area.height)}</td>
-                                    <td>unit: {area.unit}</td>
-                                </tr>
-                            );
-                        })}
-                    </tbody>
-                </table>
-            ) : null}
+            {debug ? <Debugger areas={areas} /> : null}
         </div>
     );
 };

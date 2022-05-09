@@ -29,8 +29,9 @@ export default defineConfig(({ command }) => {
             },
             lib: {
                 entry: resolve(__dirname, 'src', 'index.ts'),
-                formats: ['es', 'cjs'],
-                fileName: (ext) => `index.${ext}.js`
+                formats: ['es', 'umd'],
+                fileName: (ext) => `index.${ext}.js`,
+                name: '@bmunozg/react-image-area'
             },
             rollupOptions: {
                 external: [
@@ -44,10 +45,10 @@ export default defineConfig(({ command }) => {
                         'react-dom': 'ReactDOM'
                     }
                 }
-            },
-            target: 'esnext',
-            sourcemap: true,
-            emptyOutDir: true
+            }
+            // target: 'esnext',
+            // sourcemap: true,
+            // emptyOutDir: true
         }
     };
 });

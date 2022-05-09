@@ -4,7 +4,7 @@
   "author": "Byron Muñoz G. <byron.munoz.godoy@gmail.com> (https://github.com/ByronMunozG)",
   "license": "MIT",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -36,7 +36,8 @@
     "build:example": "ladle build --out ./build --base-url /react-image-area/",
     "build": "vite build",
     "predeploy": "npm run build:example",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "semantic-release": "semantic-release"
   },
   "devDependencies": {
     "@ladle/react": "^0.11.0",
@@ -55,7 +56,8 @@
     "prettier": "^2.6.0",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
-    "vite-plugin-dts": "^0.9.10"
+    "vite-plugin-dts": "^0.9.10",
+    "semantic-release": "^19.0.2"
   },
   "peerDependencies": {
     "react": "^17.0.2",
@@ -63,10 +65,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ByronMunozG/react-image-area.git"
+    "url": "https://github.com/ByronMunozG/react-image-area.git"
   },
   "bugs": {
     "url": "https://github.com/ByronMunozG/react-image-area/issues"
   },
-  "homepage": "https://ByronMunozG.github.io/react-image-area"
+  "homepage": "https://ByronMunozG.github.io/react-image-area",
+  "release": {
+    "branches": ["main"]
+  },
+  "publishConfig": {
+    "access": "public"
+  }
 }

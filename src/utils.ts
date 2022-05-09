@@ -1,4 +1,4 @@
-import { IPropUnit } from './components';
+import { IPropUnit } from './components/AreaSelector/types';
 import { IPixelArea, IPercentArea, IArea, Ords } from './types';
 
 export const defaultArea: IPixelArea = {
