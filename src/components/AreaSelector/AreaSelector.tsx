@@ -408,6 +408,7 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
                 boxSizing: 'border-box',
                 maxWidth: '100%',
                 touchAction: 'none',
+                lineHeight: 0,
                 ...wrapperStyle
             }}
         >
