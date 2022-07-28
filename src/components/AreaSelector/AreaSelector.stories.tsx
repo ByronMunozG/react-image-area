@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { AreaSelector } from 'src/components/AreaSelector';
 import { CustomAreaRenderer, IArea } from 'src/types';
 import type { Story } from '@ladle/react';
+import { IPropUnit } from './types';
 
 export const AreaSelectExample: Story<{
     maxAreas: number;
     debug: boolean;
     customRenderExampleText: string;
-}> = ({ maxAreas, debug, customRenderExampleText }) => {
+    unit: IPropUnit;
+}> = ({ maxAreas, debug, customRenderExampleText, unit }) => {
     const [areas, setAreas] = useState<IArea[]>([]);
     const onChangeHandler = (areas: IArea[]) => {
         setAreas(areas);
@@ -38,8 +40,9 @@ export const AreaSelectExample: Story<{
                 opacity: '0.5'
             }}
             customAreaRenderer={customRender}
+            unit={unit}
         >
-            <img src='logo512.png' />
+            <img src="logo512.png" />
         </AreaSelector>
     );
 };
@@ -48,4 +51,11 @@ AreaSelectExample.args = {
     maxAreas: 1,
     debug: true,
     customRenderExampleText: 'test'
+};
+AreaSelectExample.argTypes = {
+    unit: {
+        options: ['pixel', 'percentage'],
+        control: { type: 'select' },
+        defaultValue: 'pixel'
+    }
 };
