@@ -4,7 +4,7 @@
   "author": "Byron Muñoz G. <byron.munoz.godoy@gmail.com> (https://github.com/ByronMunozG)",
   "license": "MIT",
   "private": false,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
@@ -57,8 +57,9 @@
     "vite-plugin-dts": "^0.9.10"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "@types/react": "^17.0.0 || ^18.0.0",
+    "react": "^17.0.0 || ^18.0.0",
+    "react-dom": "^17.0.0 || ^18.0.0"
   },
   "repository": {
     "type": "git",
