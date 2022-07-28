@@ -8,12 +8,6 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
-    }
-  },
   "sideEffects": false,
   "files": [
     "dist"
@@ -37,7 +31,8 @@
     "build": "vite build",
     "predeploy": "npm run build:example",
     "deploy": "gh-pages -d build",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "commit": "git-cz"
   },
   "devDependencies": {
     "@ladle/react": "^0.11.0",
@@ -47,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^5.15.0",
     "@typescript-eslint/parser": "^5.15.0",
     "@vitejs/plugin-react": "^1.2.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8.11.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -54,10 +50,11 @@
     "eslint-plugin-react-hooks": "^4.3.0",
     "gh-pages": "^3.2.3",
     "prettier": "^2.6.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "semantic-release": "^19.0.2",
     "typescript": "^4.5.4",
     "vite": "^2.8.0",
-    "vite-plugin-dts": "^0.9.10",
-    "semantic-release": "^19.0.2"
+    "vite-plugin-dts": "^0.9.10"
   },
   "peerDependencies": {
     "react": "^17.0.2",
@@ -72,9 +69,16 @@
   },
   "homepage": "https://ByronMunozG.github.io/react-image-area",
   "release": {
-    "branches": ["main"]
+    "branches": [
+      "main"
+    ]
   },
   "publishConfig": {
     "access": "public"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
