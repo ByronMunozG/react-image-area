@@ -68,11 +68,6 @@
     "url": "https://github.com/ByronMunozG/react-image-area/issues"
   },
   "homepage": "https://ByronMunozG.github.io/react-image-area",
-  "release": {
-    "branches": [
-      "main"
-    ]
-  },
   "publishConfig": {
     "access": "public"
   },
