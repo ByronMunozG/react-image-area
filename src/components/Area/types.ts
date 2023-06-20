@@ -7,5 +7,6 @@ export interface IAreaProps {
     onCropStart: (event: PointerEvent<HTMLDivElement>) => void;
     showHandles: boolean;
     customAreaRenderer?: CustomAreaRenderer;
-    areaNumber: number 
+    areaNumber: number;
+    removeArea: (index: number) => void;
 }

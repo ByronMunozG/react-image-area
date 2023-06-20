@@ -33,6 +33,7 @@ export interface IArea extends IRectangle {
 
 export interface IAreaRendererProps extends Omit<IArea, 'customAreaRenderer'> {
     areaNumber: number;
+    removeArea: (index: number) => void;
 }
 
 export interface IPixelArea extends IArea {
