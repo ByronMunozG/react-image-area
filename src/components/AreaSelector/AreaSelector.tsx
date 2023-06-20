@@ -398,6 +398,10 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
         });
     };
 
+    const removeArea = (index: number) => {
+        onChange([...areas.slice(0, index), ...areas.slice(index + 1)]);
+    };
+
     return (
         <div
             ref={wrapperRef}
@@ -429,6 +433,7 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
                     globalAreaStyle={globalAreaStyle}
                     customAreaRenderer={customAreaRenderer}
                     areaNumber={index + 1}
+                    removeArea={removeArea}
                 />
             ))}
             {debug ? <Debugger areas={areas} /> : null}

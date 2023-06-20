@@ -20,6 +20,19 @@ export const AreaSelectExample: Story<{
             return (
                 <div key={areaProps.areaNumber}>
                     {customRenderExampleText} - {areaProps.areaNumber}
+                    <button
+                        style={{
+                            position: 'absolute',
+                            bottom: '-30px',
+                            left: '50%',
+                            transform: 'translateX(-50%)'
+                        }}
+                        onClick={() =>
+                            areaProps.removeArea(areaProps.areaNumber - 1)
+                        }
+                    >
+                        remove
+                    </button>
                 </div>
             );
         }

@@ -8,7 +8,8 @@ export const Area: FunctionComponent<IAreaProps> = ({
     showHandles,
     globalAreaStyle,
     customAreaRenderer,
-    areaNumber
+    areaNumber,
+    removeArea
 }) => {
     const localStyle = {
         top: `${area.y}${area.unit}`,
@@ -33,7 +34,7 @@ export const Area: FunctionComponent<IAreaProps> = ({
             data-wrapper="wrapper"
         >
             {customAreaRenderer
-                ? customAreaRenderer({ ...area, areaNumber })
+                ? customAreaRenderer({ ...area, areaNumber, removeArea })
                 : null}
             {showHandles ? <Handles /> : null}
         </div>
