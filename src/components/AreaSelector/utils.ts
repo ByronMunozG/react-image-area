@@ -1,9 +1,9 @@
-export const isSubElement = (el: any, check: (el: any) => boolean): boolean => {
+export const isSubElement = (el: HTMLElement | null, check: (el: HTMLElement) => boolean): boolean => {
     if (el === null) {
         return false;
     } else if (check(el)) {
         return true;
     } else {
-        return isSubElement(el.parentNode, check);
+        return isSubElement(el.parentElement, check);
     }
 };

@@ -7,7 +7,13 @@ interface IDebuggerProps {
 
 const Debugger: FunctionComponent<IDebuggerProps> = ({ areas }) => {
     return (
-        <table style={{ position: 'absolute', right: 0, top: 0 }}>
+        <table
+            style={{
+                position: 'absolute',
+                right: 0,
+                top: 8
+            }}
+        >
             <tbody>
                 {areas.map((area, index) => {
                     return (

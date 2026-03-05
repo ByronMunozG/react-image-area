@@ -1,6 +1,6 @@
 # react-image-area
 
-![react](https://img.shields.io/badge/react-^17.0.0-blue.svg)
+![react](https://img.shields.io/badge/react-^17%20%7C%20^18%20%7C%20^19-blue.svg)
 ![language](https://img.shields.io/badge/language-typescript-blue.svg)
 ![license](https://img.shields.io/badge/license-MIT-green.svg)
 
@@ -23,6 +23,8 @@
 ```bash
 npm i @bmunozg/react-image-area
 ```
+
+> **Peer dependencies:** React 17, 18, and 19 are all supported.
 
 ## :rocket: Usage
 

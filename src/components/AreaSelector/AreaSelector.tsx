@@ -41,8 +41,8 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
     customAreaRenderer,
     mediaWrapperClassName
 }) => {
-    const wrapperRef = useRef<HTMLDivElement>(null!);
-    const mediaRef = useRef<HTMLDivElement>(null!);
+    const wrapperRef = useRef<HTMLDivElement | null>(null);
+    const mediaRef = useRef<HTMLDivElement | null>(null);
     const [areaCounter, setAreaCounter] = useState(0);
     const [eventData, setEventData] = useState<IEventData>({
         startClientX: 0,
@@ -69,9 +69,9 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
     };
 
     const getPointRegion = useCallback(
-        (box: IRectangle): XYOrds => {
-            const relativeX = eventData.clientX - box.x;
-            const relativeY = eventData.clientY - box.y;
+        (box: IRectangle, clientX: number, clientY: number): XYOrds => {
+            const relativeX = clientX - box.x;
+            const relativeY = clientY - box.y;
             const topHalf = relativeY < eventData.startAreaY;
             const leftHalf = relativeX < eventData.startAreaX;
             if (leftHalf) {
@@ -93,7 +93,7 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
         if (
             target.dataset.wrapper ||
             target.dataset.direction ||
-            isSubElement(target, (element) => element.dataset?.wrapper)
+            isSubElement(target, (element) => !!element.dataset?.wrapper)
         ) {
             return;
         }
@@ -142,11 +142,11 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
     };
 
     const dragArea = useCallback(
-        (updatedArea: IArea) => {
+        (updatedArea: IArea, clientX: number, clientY: number) => {
             const box = getBox();
             const nextArea = makePixelArea(updatedArea);
-            const xDiff = eventData.clientX - eventData.startClientX;
-            const yDiff = eventData.clientY - eventData.startClientY;
+            const xDiff = clientX - eventData.startClientX;
+            const yDiff = clientY - eventData.startClientY;
 
             nextArea.x = clamp(
                 eventData.startAreaX + xDiff,
@@ -164,13 +164,13 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
     );
 
     const resizeArea = useCallback(
-        (updatedArea: IArea) => {
+        (updatedArea: IArea, clientX: number, clientY: number) => {
             const box = getBox();
-            const direction = getPointRegion(box);
+            const direction = getPointRegion(box, clientX, clientY);
             const nextArea = makePixelArea(updatedArea);
             const resolvedOrd: Ords = eventData.ord ? eventData.ord : direction;
-            const xDiff = eventData.clientX - eventData.startClientX;
-            const yDiff = eventData.clientY - eventData.startClientY;
+            const xDiff = clientX - eventData.startClientX;
+            const yDiff = clientY - eventData.startClientY;
 
             const tmpArea: IPixelArea = {
                 unit: 'px',
@@ -253,17 +253,19 @@ export const AreaSelector: FunctionComponent<IAreaSelectorProps> = ({
             }
             const box = getBox();
             const updatedArea = areas[areaChangeIndex];
+            const clientX = event.clientX;
+            const clientY = event.clientY;
             setEventData((currentData) => ({
                 ...currentData,
-                clientX: event.clientX,
-                clientY: event.clientY
+                clientX,
+                clientY
             }));
             let nextArea: IArea;
 
             if (eventData.isResize) {
-                nextArea = resizeArea(updatedArea);
+                nextArea = resizeArea(updatedArea, clientX, clientY);
             } else {
-                nextArea = dragArea(updatedArea);
+                nextArea = dragArea(updatedArea, clientX, clientY);
             }
 
             if (!areAreasEqual(updatedArea, nextArea)) {

@@ -126,7 +126,7 @@ export function containArea(
 
     // Make area respect min width generally.
     if (containedArea.width < minWidth) {
-        if (ord === 'sw' || ord == 'nw') {
+        if (ord === 'sw' || ord === 'nw') {
             // Stops box moving when min is hit.
             containedArea.x -= minWidth - containedArea.width;
         }
@@ -135,7 +135,7 @@ export function containArea(
 
     // Make area respect min height generally.
     if (containedArea.height < minHeight) {
-        if (ord === 'nw' || ord == 'ne') {
+        if (ord === 'nw' || ord === 'ne') {
             // Stops box moving when min is hit.
             containedArea.y -= minHeight - containedArea.height;
         }
@@ -144,16 +144,16 @@ export function containArea(
 
     // Make area respect max width generally.
     if (containedArea.width > maxWidth) {
-        if (ord === 'sw' || ord == 'nw') {
+        if (ord === 'sw' || ord === 'nw') {
             // Stops box moving when max is hit.
             containedArea.x -= maxWidth - containedArea.width;
         }
         containedArea.width = maxWidth;
     }
 
-    // Make areea respect max height generally.
+    // Make area respect max height generally.
     if (containedArea.height > maxHeight) {
-        if (ord === 'nw' || ord == 'ne') {
+        if (ord === 'nw' || ord === 'ne') {
             // Stops box moving when min is hit.
             containedArea.y -= maxHeight - containedArea.height;
         }
