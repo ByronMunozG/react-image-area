@@ -5,6 +5,13 @@
 
 * add React 18/19 support ([8b920a3](https://github.com/ByronMunozG/react-image-area/commit/8b920a3771234046457d8c4e7f154b092debb71c))
 
+# [1.2.0](https://github.com/ByronMunozG/react-image-area/compare/v1.1.0...v1.2.0) (2026-03-05)
+
+
+### Features
+
+* add React 18/19 support ([8b920a3](https://github.com/ByronMunozG/react-image-area/commit/8b920a3771234046457d8c4e7f154b092debb71c))
+
 # [1.1.0](https://github.com/ByronMunozG/react-image-area/compare/v1.0.2...v1.1.0) (2022-07-28)
 
 
