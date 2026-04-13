@@ -1,82 +1,84 @@
 {
-  "name": "@bmunozg/react-image-area",
-  "description": "React component to select multiple areas/regions of images.",
-  "author": "Byron Muñoz G. <byron.munoz.godoy@gmail.com> (https://github.com/ByronMunozG)",
-  "license": "MIT",
-  "private": false,
-  "version": "1.0.2",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
-  "types": "dist/index.d.ts",
-  "sideEffects": false,
-  "files": [
-    "dist"
-  ],
-  "keywords": [
-    "react",
-    "reactjs",
-    "region",
-    "image",
-    "select",
-    "selection",
-    "crop",
-    "area"
-  ],
-  "scripts": {
-    "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
-    "lint": "eslint ./src --ext .ts,.tsx",
-    "dev": "ladle serve",
-    "build:example": "ladle build --out ./build --base-url /react-image-area/",
-    "build": "vite build",
-    "predeploy": "npm run build:example",
-    "deploy": "gh-pages -d build",
-    "semantic-release": "semantic-release",
-    "commit": "git-cz"
-  },
-  "devDependencies": {
-    "@ladle/react": "^4.0.0",
-    "@rollup/plugin-terser": "^1.0.0",
-    "@types/node": "^20.0.0",
-    "@types/react": "^19.0.0",
-    "@types/react-dom": "^19.0.0",
-    "@typescript-eslint/eslint-plugin": "^7.0.0",
-    "@typescript-eslint/parser": "^7.0.0",
-    "@vitejs/plugin-react": "^4.0.0",
-    "cz-conventional-changelog": "^3.3.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-prettier": "^5.0.0",
-    "eslint-plugin-react": "^7.29.4",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "gh-pages": "^6.0.0",
-    "prettier": "^3.0.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
-    "semantic-release": "^25.0.3",
-    "typescript": "^5.0.0",
-    "vite": "^5.0.0",
-    "vite-plugin-dts": "^4.0.0"
-  },
-  "peerDependencies": {
-    "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
-    "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ByronMunozG/react-image-area.git"
-  },
-  "bugs": {
-    "url": "https://github.com/ByronMunozG/react-image-area/issues"
-  },
-  "homepage": "https://ByronMunozG.github.io/react-image-area",
-  "publishConfig": {
-    "access": "public"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+    "name": "@bmunozg/react-image-area",
+    "description": "React component to select multiple areas/regions of images.",
+    "author": "Byron Muñoz G. <byron.munoz.godoy@gmail.com> (https://github.com/ByronMunozG)",
+    "license": "MIT",
+    "private": false,
+    "version": "1.0.2",
+    "main": "dist/index.umd.js",
+    "module": "dist/index.es.js",
+    "types": "dist/index.d.ts",
+    "sideEffects": false,
+    "files": [
+        "dist"
+    ],
+    "keywords": [
+        "react",
+        "reactjs",
+        "region",
+        "image",
+        "select",
+        "selection",
+        "crop",
+        "area"
+    ],
+    "scripts": {
+        "format": "prettier --write \"src/**/*.{ts,tsx,json,js,jsx}\"",
+        "format:check": "prettier --list-different \"src/**/*.{ts,tsx,json,js,jsx}\"",
+        "lint": "eslint ./src --ext .ts,.tsx",
+        "dev": "ladle serve",
+        "build:example": "ladle build --outDir ./build --base /react-image-area/ --viteConfig .ladle/vite.config.mts",
+        "preview": "ladle preview --outDir ./build --base /react-image-area/ --viteConfig .ladle/vite.config.mts",
+        "build": "vite build",
+        "predeploy": "npm run build:example",
+        "deploy": "gh-pages -d build",
+        "semantic-release": "semantic-release",
+        "commit": "git-cz"
+    },
+    "devDependencies": {
+        "@ladle/react": "^4.0.0",
+        "@rollup/plugin-terser": "^1.0.0",
+        "@types/node": "^20.0.0",
+        "@types/react": "^19.0.0",
+        "@types/react-dom": "^19.0.0",
+        "@typescript-eslint/eslint-plugin": "^7.0.0",
+        "@typescript-eslint/parser": "^7.0.0",
+        "@vitejs/plugin-react": "^4.0.0",
+        "cz-conventional-changelog": "^3.3.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.0.0",
+        "eslint-plugin-prettier": "^5.0.0",
+        "eslint-plugin-react": "^7.29.4",
+        "eslint-plugin-react-hooks": "^4.3.0",
+        "gh-pages": "^6.0.0",
+        "prettier": "^3.0.0",
+        "react": "^19.0.0",
+        "react-dom": "^19.0.0",
+        "semantic-release": "^25.0.3",
+        "typescript": "^5.0.0",
+        "vite": "^5.0.0",
+        "vite-plugin-dts": "^4.0.0"
+    },
+    "peerDependencies": {
+        "@types/react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+        "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+        "react-dom": "^17.0.0 || ^18.0.0 || ^19.0.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ByronMunozG/react-image-area.git"
+    },
+    "bugs": {
+        "url": "https://github.com/ByronMunozG/react-image-area/issues"
+    },
+    "homepage": "https://ByronMunozG.github.io/react-image-area",
+    "publishConfig": {
+        "access": "public"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
-  }
 }
+
